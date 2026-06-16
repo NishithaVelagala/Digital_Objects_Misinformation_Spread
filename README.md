@@ -13,16 +13,17 @@ This repository serves as a unified dual-utility workspace containing two standa
 
 This standalone notebook automates an end-to-end network modeling pipeline. It ingests historical sharing logs to identify coordinated bot amplifiers and calculate the physical propagation speed of viral rumors.
 
+### 📂 Dataset Information
+The network reconstruction backend relies on the following publicly available open dataset:
+* **Dataset Name**: [Viral Content Propagation & Botnet Detection](https://www.kaggle.com/datasets/masanakashima/viral-content-propagation-2026)
+* **Author / Host**: masanakashima via [Kaggle](https://www.kaggle.com/)
+* **Files Tracked**: `users.csv`, `relations.csv`, `propagation.csv`
+
 ### Key Features
 * **Account Typology Profiling**: Maps specific actor classifications (`Bot`, `Normal`, `InFluencer`, `Lurker`) and sharing habits directly from dataset logs.
 * **Patient Zero Identification**: Automatically reconstructs misinformation transmission pathways to pinpoint the precise source root node (`Tweet_ID` $\rightarrow$ `User_ID`) that initiated a cascade.
 * **Information Velocity Analysis**: Measures and contrasts the acceleration rate of organic sharing against artificial amplification spikes driven by automated networks.
 * **Coordinated Bot Clique Detection**: Implements `nx.find_cliques` to isolate dense subgraphs of malicious accounts operating in perfect synchronization during initial target broadcasts (Step 0).
-
-### Output Dashboard
-The module compiles its mathematical outputs into a high-resolution 3-panel visual asset (`misinformation_analysis_dashboard.png`) displaying the structural cascade hierarchy, information curves, and the isolated hub orchestrator node.
-
-![Misinformation Analysis Dashboard](misinformation_analysis_dashboard.png)
 
 ### Requirements & Libraries
 ```bash
@@ -40,13 +41,6 @@ This independent module implements a lightweight, real-time claim authentication
 * **Dynamic `ipywidgets` UI**: Renders custom text entry bars and event-driven submission buttons directly within the cell output area.
 * **Conditional Verdict Badging**: Evaluates metadata text dynamically to append colored priority markers based on truth severity metrics (e.g., **Red Badges for False/Misleading statements**, **Green for Verified Accuracy**, and **Yellow for Mixed Results**).
 * **Direct Source Citation**: Generates hyperlinked index cards that contain the original speaker, date, publisher attribution, and direct routing back to the publisher’s full review page.
-
-### Live Application Output Interface
-The application renders an interactive widget interface allowing real-time claim validation:
-
-![Google Fact Check Tools API Quick Checker UI](fact_check_output.png)
-
-*Example execution workflow depicted above:* Querying the classic myth *"human uses 10% of the brain"* instantly fetches data payloads from verified publishers, returning a visual **[FALSE]** badge along with explicit source tracking parameters.
 
 ### Requirements & Libraries
 ```bash
